@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import { removeTokens } from "../../common/utils";
+
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    removeTokens("user");
+    navigate("/auth/login");
+  };
   return (
     <div
       className="min-vh-100"
@@ -34,10 +43,8 @@ const AdminDashboard = () => {
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Logout
-                  </a>
+                <li onClick={logout}>
+                  <a className="dropdown-item">Logout</a>
                 </li>
               </ul>
             </div>

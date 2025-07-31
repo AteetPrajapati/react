@@ -1,4 +1,16 @@
+import { useNavigate } from "react-router-dom";
+import { useUserStore } from "../../common/hooks";
+import { removeTokens } from "../../common/utils";
+
 const UserDashboard = () => {
+  const { userData } = useUserStore();
+  const navigate = useNavigate();
+
+  const logout = () => {
+    removeTokens("user");
+    navigate("/auth/login");
+  };
+
   return (
     <div
       className="min-vh-100"
@@ -18,7 +30,7 @@ const UserDashboard = () => {
                 type="button"
                 data-bs-toggle="dropdown"
               >
-                John Doe
+                {userData.email}
               </button>
               <ul className="dropdown-menu">
                 <li>
@@ -34,10 +46,8 @@ const UserDashboard = () => {
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Logout
-                  </a>
+                <li onClick={logout}>
+                  <a className="dropdown-item">Logout</a>
                 </li>
               </ul>
             </div>

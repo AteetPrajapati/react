@@ -34,7 +34,7 @@ const Login = () => {
       {
         onSuccess: (res: AxiosResponse<ApiResponse>) => {
           const { data, message, status } = res.data;
-          const role = data.role;
+          const role = data.user.role;
           if (status) {
             setToken(data, role);
             const rolePaths: Record<string, string> = {

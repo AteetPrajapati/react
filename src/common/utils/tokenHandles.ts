@@ -28,9 +28,9 @@ export const removeTokens = (role: string) => {
     return;
   }
 
-  if (role === "customer") {
-    localStorage.removeItem("customerAccessToken");
-    localStorage.removeItem("customerRefreshToken");
+  if (role === "user") {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
     return;
   }
   localStorage.removeItem("managerAccessToken");

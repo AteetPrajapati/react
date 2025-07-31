@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/wrappers/ProtectedRoute";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import UserDashboard from "./pages/user/UserDashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Layout from "./components/layouts/Layout";
 import { AuthLayout } from "./components/layouts/AuthLayout";
 
